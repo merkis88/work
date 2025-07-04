@@ -10,7 +10,7 @@
 <body>
     <h2>Регистрация</h2>
 
-    <form method="post" action="/register">
+    <form method="post" action="/work/register">
         <div>
             <label>Имя</label>
             <input type="text" name="name" value="<?= htmlspecialchars($old['name'] ?? '')?>">
@@ -55,6 +55,6 @@
         <button type="submit">Зарегистрироваться</button>
     </form>
 
-    <p><a href="/login">Войти</a></p>
+    <p><a href="=/login">Войти</a></p>
 </body>
 </html>

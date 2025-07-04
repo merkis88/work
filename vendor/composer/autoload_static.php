@@ -30,6 +30,7 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Clock\\' => 24,
+            'Src\\' => 4,
         ),
         'P' => 
         array (
@@ -39,7 +40,7 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
         ),
         'M' => 
         array (
-            'Merkis88\\Work\\' => 14,
+            'Model\\' => 6,
         ),
         'L' => 
         array (
@@ -64,6 +65,10 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -92,6 +97,10 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
         array (
             0 => __DIR__ . '/..' . '/symfony/clock',
         ),
+        'Src\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/src',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -104,9 +113,9 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
-        'Merkis88\\Work\\' => 
+        'Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/app/Model',
         ),
         'Laravel\\SerializableClosure\\' => 
         array (
@@ -146,6 +155,10 @@ class ComposerStaticInit72ae74f112923c60eba29f1a837963d7
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Controller;
 use App\Model\User;
 
 class  LoginController

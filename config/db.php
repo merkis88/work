@@ -1,6 +1,6 @@
 <?php
 
-use illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 

@@ -40,7 +40,6 @@ class RegistrationController
             $errors['phone'] = "Такой номер телефона уже существует";
         }
 
-
         if (empty($errors)) {
             User::create([
                 'name' => $name,
@@ -49,7 +48,7 @@ class RegistrationController
                 'phone' => $phone
             ]);
 
-            header("Location: /public/login");
+            header("Location: /login");
             exit;
         }
 
@@ -61,9 +60,5 @@ class RegistrationController
                 'phone' => $phone
             ]
         ]);
-
     }
 }
-
-
-
