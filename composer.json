@@ -2,7 +2,9 @@
     "name": "merkis88/work",
     "autoload": {
         "psr-4": {
-            "Merkis88\\Work\\": "src/"
+            "App\\": "app/",
+            "Model\\": "app/Model/",
+            "Src\\": "core/src"
         }
     },
     "authors": [
