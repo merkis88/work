@@ -1,0 +1,17 @@
+{
+    "name": "merkis88/work",
+    "autoload": {
+        "psr-4": {
+            "Merkis88\\Work\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "merkis88",
+            "email": "axuenno88@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^12.14"
+    }
+}
