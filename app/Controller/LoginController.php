@@ -30,7 +30,7 @@ class  LoginController
 
             if ($user && password_verify($password, $user->password)) {
                 $_SESSION['user'] = $user->id;
-                header("Location: /profile");
+                header("Location: /work/profile");
                 exit;
             } else {
                 $errors['phone'] = 'Неверные данные для входа';
