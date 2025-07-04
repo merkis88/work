@@ -48,7 +48,7 @@ class RegistrationController
                 'phone' => $phone
             ]);
 
-            header("Location: /login");
+            header("Location: /work/login");
             exit;
         }
 

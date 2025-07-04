@@ -55,6 +55,6 @@
         <button type="submit">Зарегистрироваться</button>
     </form>
 
-    <p><a href="=/login">Войти</a></p>
+    <p><a href="/work/login">Войти</a></p>
 </body>
 </html>
