@@ -1,0 +1,20 @@
+{
+    "name": "merkis88/work",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Model\\": "app/Model/",
+            "Src\\": "core/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "merkis88",
+            "email": "axuenno88@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^12.14",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
