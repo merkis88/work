@@ -5,6 +5,9 @@ use App\Model\User;
 
 class RegistrationController
 {
+    private $siteKey = 'ysc1_jtdEE7euosNTMM4bm0RbBdL7puGJc5Kt3ZagmcC4193009e2';
+    private $secret = 'ysc2_jtdEE7euosNTMM4bm0RbKEOrR2XnxGtmSFqeCpKvac61a986';
+
     public function showRegisterForm()
     {
         if (session_status() === PHP_SESSION_NONE) {
@@ -12,7 +15,7 @@ class RegistrationController
         }
 
         view('auth/register', [
-            'siteKey' => getenv('SMARTCAPTCHA_SITEKEY')
+            'siteKey' => $this->siteKey
         ]);
     }
 
@@ -74,7 +77,7 @@ class RegistrationController
                 'email' => $email,
                 'phone' => $phone
             ],
-            'siteKey' => getenv('SMARTCAPTCHA_SITEKEY')
+            'siteKey' => $this->siteKey
         ]);
     }
 
@@ -82,23 +85,22 @@ class RegistrationController
     {
         if (!$token) return false;
 
-        $secret = getenv('SMARTCAPTCHA_SECRET');
-
-        $payload = json_encode([
+        $secret = $this->secret;
+        $data = http_build_query([
             'secret' => $secret,
             'token' => $token
         ]);
 
         $options = [
             'http' => [
-                'header'  => "Content-Type: application/json\r\n",
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
                 'method'  => 'POST',
-                'content' => $payload,
+                'content' => $data,
                 'timeout' => 5
             ]
         ];
 
-        $context  = stream_context_create($options);
+        $context = stream_context_create($options);
         $result = file_get_contents('https://smartcaptcha.yandexcloud.net/validate', false, $context);
 
         if ($result === FALSE) {
@@ -108,4 +110,5 @@ class RegistrationController
         $data = json_decode($result, true);
         return isset($data['status']) && $data['status'] === 'ok';
     }
+
 }

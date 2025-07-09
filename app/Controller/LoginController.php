@@ -5,6 +5,9 @@ use App\Model\User;
 
 class LoginController
 {
+    private $siteKey = 'ysc1_jtdEE7euosNTMM4bm0RbBdL7puGJc5Kt3ZagmcC4193009e2';
+    private $secret = 'ysc2_jtdEE7euosNTMM4bm0RbKEOrR2XnxGtmSFqeCpKvac61a986';
+
     public function showLoginForm()
     {
         if (session_status() === PHP_SESSION_NONE) {
@@ -12,7 +15,7 @@ class LoginController
         }
 
         view('auth/login', [
-            'siteKey' => getenv('SMARTCAPTCHA_SITEKEY')
+            'siteKey' => $this->siteKey
         ]);
     }
 
@@ -60,7 +63,7 @@ class LoginController
             'errors' => $errors,
             'old' => ['login' => $login],
             'showCaptcha' => $showCaptcha,
-            'siteKey' => getenv('SMARTCAPTCHA_SITEKEY')
+            'siteKey' => $this->siteKey
         ]);
     }
 
@@ -68,7 +71,7 @@ class LoginController
     {
         if (!$token) return false;
 
-        $secret = getenv('SMARTCAPTCHA_SECRET');
+        $secret = $this->secret;
         $response = file_get_contents("https://smartcaptcha.yandexcloud.net/validate?secret=$secret&token=$token");
         $result = json_decode($response, true);
 
