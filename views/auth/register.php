@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
+    <link rel="stylesheet" href="/work/public/css/register.css">
+
+
 </head>
 <body>
 <h2>Регистрация</h2>
@@ -41,7 +44,7 @@
         <label>Повторение пароля</label>
         <input type="password" name="repeat_password">
         <?php if (!empty($errors['password'])): ?>
-            <div style="color: red"><?= htmlspecialchars($errors['password']) ?></div>
+            <div ><?= htmlspecialchars($errors['password']) ?></div>
         <?php endif; ?>
     </div>
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Вход</title>
+    <link rel="stylesheet" href="/work/public/css/login.css">
 </head>
 <body>
 <h1>Вход</h1>
@@ -29,7 +30,7 @@
     <?php endif; ?>
 
     <?php if (!empty($errors['captcha'])): ?>
-        <div style="color:red"><?= htmlspecialchars($errors['captcha']) ?></div>
+        <div><?= htmlspecialchars($errors['captcha']) ?></div>
     <?php endif; ?>
 
     <button type="submit">Войти</button>

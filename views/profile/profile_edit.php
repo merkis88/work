@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Редактировать профиль</title>
+    <link rel="stylesheet" href="/work/public/css/profile_edit.css">
 </head>
 <body>
 <h1>Редактировать профиль</h1>
@@ -12,7 +13,7 @@
         <label>Имя</label>
         <input type="text" name="name" value="<?= htmlspecialchars($old['name'] ?? $user->name) ?>">
         <?php if (!empty($errors['name'])): ?>
-            <div style="color:red"><?= htmlspecialchars($errors['name']) ?></div>
+            <div><?= htmlspecialchars($errors['name']) ?></div>
         <?php endif; ?>
     </div>
 
@@ -20,7 +21,7 @@
         <label>Email</label>
         <input type="text" name="email" value="<?= htmlspecialchars($old['email'] ?? $user->email) ?>">
         <?php if (!empty($errors['email'])): ?>
-            <div style="color:red"><?= htmlspecialchars($errors['email']) ?></div>
+            <div><?= htmlspecialchars($errors['email']) ?></div>
         <?php endif; ?>
     </div>
 
@@ -28,7 +29,7 @@
         <label>Телефон</label>
         <input type="text" name="phone" value="<?= htmlspecialchars($old['phone'] ?? $user->phone) ?>">
         <?php if (!empty($errors['phone'])): ?>
-            <div style="color:red"><?= htmlspecialchars($errors['phone']) ?></div>
+            <div><?= htmlspecialchars($errors['phone']) ?></div>
         <?php endif; ?>
     </div>
 
@@ -41,7 +42,7 @@
         <label>Повторите пароль</label>
         <input type="password" name="repeat_password">
         <?php if (!empty($errors['password'])): ?>
-            <div style="color:red"><?= htmlspecialchars($errors['password']) ?></div>
+            <div><?= htmlspecialchars($errors['password']) ?></div>
         <?php endif; ?>
     </div>
 
