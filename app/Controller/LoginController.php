@@ -10,10 +10,6 @@ class LoginController
 
     public function showLoginForm()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
         view('auth/login', [
             'siteKey' => $this->siteKey
         ]);
@@ -21,10 +17,6 @@ class LoginController
 
     public function login()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
         $_SESSION['login_attempts'] = $_SESSION['login_attempts'] ?? 0;
 
         $login = trim($_POST['phone'] ?? '');
@@ -80,9 +72,6 @@ class LoginController
 
     public function logout()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
         $_SESSION = [];
         session_destroy();
         setcookie("PHPSESSID", "", time() - 3600, "/");

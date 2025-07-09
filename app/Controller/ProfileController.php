@@ -6,17 +6,8 @@ use App\Model\User;
 
 class ProfileController
 {
-    private function startSession()
-    {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-    }
-
     public function showProfile()
     {
-        $this->startSession();
-
         if (empty($_SESSION['user'])) {
             header("Location: /work/login");
             exit;
@@ -33,8 +24,6 @@ class ProfileController
 
     public function showUpdateProfile()
     {
-        $this->startSession();
-
         if (empty($_SESSION['user'])) {
             header("Location: /work/login");
             exit;
@@ -51,8 +40,6 @@ class ProfileController
 
     public function updateProfile()
     {
-        $this->startSession();
-
         if (empty($_SESSION['user'])) {
             header("Location: /work/login");
             exit;

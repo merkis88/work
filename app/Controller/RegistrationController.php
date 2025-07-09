@@ -10,10 +10,6 @@ class RegistrationController
 
     public function showRegisterForm()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
         view('auth/register', [
             'siteKey' => $this->siteKey
         ]);
@@ -21,10 +17,6 @@ class RegistrationController
 
     public function register()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
         $name = trim($_POST['name'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $phone = trim($_POST['phone'] ?? '');
@@ -110,5 +102,4 @@ class RegistrationController
         $data = json_decode($result, true);
         return isset($data['status']) && $data['status'] === 'ok';
     }
-
 }
