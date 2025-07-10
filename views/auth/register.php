@@ -44,7 +44,7 @@
         <label>Повторение пароля</label>
         <input type="password" name="repeat_password">
         <?php if (!empty($errors['password'])): ?>
-            <div ><?= htmlspecialchars($errors['password']) ?></div>
+            <div style="color:red"><?= htmlspecialchars($errors['password']) ?></div>
         <?php endif; ?>
     </div>
 

@@ -1,7 +1,13 @@
 <?php
 
 namespace App\Controller;
+
 use App\Model\User;
+use App\Validators\NameValidator;
+use App\Validators\EmailValidator;
+use App\Validators\PhoneValidator;
+use App\Validators\PasswordValidator;
+
 
 class RegistrationController
 {
@@ -26,22 +32,24 @@ class RegistrationController
 
         $errors = [];
 
-        if (!$name) $errors['name'] = "Имя обязательно для заполнения";
+        if (!NameValidator::validateName($name)) {
+            $errors['name'] = "Имя обязательно для заполнения";
+        }
 
-        if (!$email) {
-            $errors['email'] = "Email обязателен для заполнения";
+        if (!EmailValidator::validateEmail($email)) {
+            $errors['email'] = "Email обязателен для заполнения или не корректный ";
         } elseif (User::where('email', $email)->exists()) {
             $errors['email'] = "Такой email уже существует";
         }
 
-        if (!$phone) {
-            $errors['phone'] = "Телефон обязателен для заполнения";
+        if (!PhoneValidator::validatePhone($phone)) {
+            $errors['phone'] = "Телефон должен быть в формате +7XXXXXXXXXX";
         } elseif (User::where('phone', $phone)->exists()) {
             $errors['phone'] = "Такой телефон уже существует";
         }
 
-        if (!$password || !$repeatPassword) {
-            $errors['password'] = "Пароль обязателен для заполнения";
+        if (!PasswordValidator::validatePassword($password)) {
+            $errors['password'] = "Пароль должен содержать не менее 4 символов";
         } elseif ($password !== $repeatPassword) {
             $errors['password'] = "Пароли не совпадают";
         }
